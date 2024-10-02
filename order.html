@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodie - Supper delicious Burger in town!</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+    rel="stylesheet">
+
+  <!-- preload images -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png" media="min-width(768px)">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-bg.png" media="min-width(768px)">
+  <link rel="preload" as="image" href="./assets/images/hero-bg.jpg">
+
+</head>
+
+<body id="top">
+
+  <!-- HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+      <h1><a href="#" class="logo">Foodie<span class="span">.</span></a></h1>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li class="nav-item"><a href="index.html" class="navbar-link" data-nav-link>Home</a></li>
+          <li class="nav-item"><a href="order.html" class="navbar-link" data-nav-link>Order</a></li>
+          <li class="nav-item"><a href="#about" class="navbar-link" data-nav-link>About Us</a></li>
+
+
+        </ul>
+      </nav>
+
+      <div class="header-btn-group">
+        <button class="search-btn" aria-label="Search" data-search-btn>
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+        <button class="btn btn-hover">Reservation</button>
+        <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
+          <span class="line top"></span>
+          <span class="line middle"></span>
+          <span class="line bottom"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- SEARCH BOX -->
+  <div class="search-container" data-search-container>
+    <div class="search-box">
+      <input type="search" name="search" aria-label="Search here" placeholder="Type keywords here..." class="search-input">
+      <button class="search-submit" aria-label="Submit search" data-search-submit-btn>
+        <ion-icon name="search-outline"></ion-icon>
+      </button>
+    </div>
+    <button class="search-close-btn" aria-label="Cancel search" data-search-close-btn></button>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <br><br><br>  
+  <main>
+    <article>
+        <div class="order">
+            <h1><span>Order Now</span></h1>
+
+            <div class="order_main">
+                <div class="order_img">
+                    <img src="bur-big.png/orderimg.jpg" width="400px" height="200px"  alt="Order Image">
+                </div>
+
+                <div class="order_form">
+                    <h2>Home Delivery</h2>
+
+                    <div class="order_list">
+                        <div class="order_left">
+                            <p>Order ID</p>
+                            <input type="text" id="orderId" placeholder="Order ID">
+
+                            <p>Order Date & Time</p>
+                            <input type="datetime-local" id="orderDateTime">
+
+                            <p>Full Name</p>
+                            <input type="text" id="fullName" placeholder="Customer Name">
+
+                            <p>Telephone</p>
+                            <input type="number" id="telephone" placeholder="Phone Number">
+
+                            <p>Your Address</p>
+                            <textarea id="address" placeholder="Address"></textarea>
+                        </div>
+
+                        <div class="order_right">
+                            <p>Item Code</p>
+                            <input type="text" id="itemCode" placeholder="Item Code">
+
+                            <p>Price per Item</p>
+                            <input type="number" id="price" placeholder="Price for Item">
+
+                            <p>Quantity</p>
+                            <input type="number" id="quantity" placeholder="Quantity">
+
+                            <p>Discount (%)</p>
+                            <input type="number" id="discount" placeholder="Discount Percentage">
+
+                            <p>Extra Food</p>
+                            <input type="text" id="extraFood" placeholder="Extra Food">
+
+                            <p>Order Total</p>
+                            <input type="number" id="orderTotal" placeholder="Total" readonly>
+
+                            <p>Final Amount</p>
+                            <input type="number" id="finalAmount" placeholder="Final Amount" readonly>
+                        </div>
+                    </div>
+
+                    <a href="#" class="order_btn" id="orderBtn"><i class="fa-solid fa-burger"></i> Order Now</a>
+                </div>
+            </div>
+        </div>
+    </article>
+</main>
+
+<script>
+// Add event listener for the order button
+document.getElementById('orderBtn').addEventListener('click', function(e) {
+    e.preventDefault();  // Prevent default action of anchor link
+
+    // Capture the form data
+    const price = parseFloat(document.getElementById('price').value);
+    const quantity = parseInt(document.getElementById('quantity').value);
+    const discount = parseFloat(document.getElementById('discount').value) / 100;
+
+    const total = price * quantity;
+    const finalAmount = total - (total * discount);
+
+    // Update the Total and Final Amount fields
+    document.getElementById('orderTotal').value = total.toFixed(2);
+    document.getElementById('finalAmount').value = finalAmount.toFixed(2);
+
+    const orderData = {
+        orderId: document.getElementById('orderId').value,
+        orderDateTime: document.getElementById('orderDateTime').value,
+        fullName: document.getElementById('fullName').value,
+        telephone: document.getElementById('telephone').value,
+        email: document.getElementById('email') ? document.getElementById('email').value : 'Not provided', // Check if email exists
+        address: document.getElementById('address').value,
+        itemCode: document.getElementById('itemCode').value,
+        price: price.toFixed(2),
+        quantity: quantity,
+        discount: (discount * 100).toFixed(2),  // Convert back to percentage format
+        extraFood: document.getElementById('extraFood').value,
+        orderTotal: total.toFixed(2),
+        finalAmount: finalAmount.toFixed(2),
+        message: document.getElementById('message') ? document.getElementById('message').value : 'No message'
+    };
+
+    // Store the order data in localStorage
+    localStorage.setItem('orderData', JSON.stringify(orderData));
+
+    // Navigate to the order details page
+    window.location.href = 'orderDetails.html';
+});
+</script>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top" style="background-image: url('./assets/images/footer-illustration.png')">
+      <div class="container">
+        <div class="footer-brand">
+          <a href="" class="logo">Foodie<span class="span">.</span></a>
+          <p class="footer-text">Financial experts support or help you to to find out which way you can raise your funds more.</p>
+          <ul class="social-list">
+            <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#" class="social-link"><ion-icon name="logo-pinterest"></ion-icon></a></li>
+          </ul>
+        </div>
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Contact Info</p></li>
+          <li><p class="footer-list-item">076 785 78 89</p></li>
+          <li><p class="footer-list-item">Info@YourGmail24.com</p></li>
+          <li><address class="footer-list-item">Panadura, Colombo</address></li>
+        </ul>
+        <ul class="footer-list">
+          <li><p class="footer-list-title">Opening Hours</p></li>
+          <li><p class="footer-list-item">Monday-Friday: 08:00-22:00</p></li>
+          <li><p class="footer-list-item">Tuesday 4PM: Till Mid Night</p></li>
+          <li><p class="footer-list-item">Saturday: 10:00-16:00</p></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ionicon link -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
+
