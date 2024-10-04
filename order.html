@@ -71,6 +71,7 @@
   </div>
 
   <!-- MAIN CONTENT -->
+
   <br><br><br>  
   <main>
     <article>
@@ -144,6 +145,12 @@ document.getElementById('orderBtn').addEventListener('click', function(e) {
     const quantity = parseInt(document.getElementById('quantity').value);
     const discount = parseFloat(document.getElementById('discount').value) / 100;
 
+    // Validate the form fields
+    if (!validateForm()) {
+        alert('Please fill in all required fields correctly.');
+        return;
+    }
+
     const total = price * quantity;
     const finalAmount = total - (total * discount);
 
@@ -156,7 +163,6 @@ document.getElementById('orderBtn').addEventListener('click', function(e) {
         orderDateTime: document.getElementById('orderDateTime').value,
         fullName: document.getElementById('fullName').value,
         telephone: document.getElementById('telephone').value,
-        email: document.getElementById('email') ? document.getElementById('email').value : 'Not provided', // Check if email exists
         address: document.getElementById('address').value,
         itemCode: document.getElementById('itemCode').value,
         price: price.toFixed(2),
@@ -164,8 +170,7 @@ document.getElementById('orderBtn').addEventListener('click', function(e) {
         discount: (discount * 100).toFixed(2),  // Convert back to percentage format
         extraFood: document.getElementById('extraFood').value,
         orderTotal: total.toFixed(2),
-        finalAmount: finalAmount.toFixed(2),
-        message: document.getElementById('message') ? document.getElementById('message').value : 'No message'
+        finalAmount: finalAmount.toFixed(2)
     };
 
     // Store the order data in localStorage
@@ -174,8 +179,44 @@ document.getElementById('orderBtn').addEventListener('click', function(e) {
     // Navigate to the order details page
     window.location.href = 'orderDetails.html';
 });
-</script>
 
+// Function to validate the form
+function validateForm() {
+    const orderId = document.getElementById('orderId').value;
+    const orderDateTime = document.getElementById('orderDateTime').value;
+    const fullName = document.getElementById('fullName').value;
+    const telephone = document.getElementById('telephone').value;
+    const address = document.getElementById('address').value;
+    const price = document.getElementById('price').value;
+    const quantity = document.getElementById('quantity').value;
+    const discount = document.getElementById('discount').value;
+
+    if (!orderId || !orderDateTime || !fullName || !telephone || !address || !price || !quantity || !discount) {
+        return false;
+    }
+
+    if (isNaN(price) || isNaN(quantity) || isNaN(discount)) {
+        return false;
+    }
+
+    if (telephone.length < 10 || telephone.length > 15) {
+        alert('Please enter a valid telephone number.');
+        return false;
+    }
+
+    if (quantity <= 0) {
+        alert('Quantity should be greater than 0.');
+        return false;
+    }
+
+    if (discount < 0 || discount > 100) {
+        alert('Discount should be between 0 and 100%.');
+        return false;
+    }
+
+    return true;
+}
+</script>
 
   <!-- FOOTER -->
   <footer class="footer">
