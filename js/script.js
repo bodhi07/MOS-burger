@@ -2,9 +2,6 @@
 
 
 
-/**
- * navbar toggle
- */
 
 const navbar = document.querySelector("[data-navbar]");
 const navbarLinks = document.querySelectorAll("[data-nav-link]");
@@ -24,9 +21,6 @@ for (let i = 0; i < navbarLinks.length; i++) {
 
 
 
-/**
- * header sticky & back to top
- */
 
 const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
@@ -43,9 +37,6 @@ window.addEventListener("scroll", function () {
 
 
 
-/**
- * search box toggle
- */
 
 const searchBtn = document.querySelector("[data-search-btn]");
 const searchContainer = document.querySelector("[data-search-container]");
@@ -63,9 +54,6 @@ for (let i = 0; i < searchBoxElems.length; i++) {
 
 
 
-/**
- * move cycle on scroll
- */
 
 const deliveryBoy = document.querySelector("[data-delivery-boy]");
 
