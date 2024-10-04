@@ -289,12 +289,6 @@ body.active { overflow: hidden; }
 
 
 
-
-
-/*-----------------------------------*\
-  #HEADER
-\*-----------------------------------*/
-
 /* .navbar, */
 .header-btn-group .btn { display: none; }
 
@@ -418,12 +412,6 @@ body.active { overflow: hidden; }
 .navbar-link:is(:hover, :focus) { color: var(--black_95); }
 
 
-
-
-/*-----------------------------------*\
-  #SEARCH BOX
-\*-----------------------------------*/
-
 .search-container {
   position: fixed;
   top: -60%;
@@ -484,13 +472,6 @@ body.active { overflow: hidden; }
 }
 
 
-
-
-
-/*-----------------------------------*\
-  #HERO
-\*-----------------------------------*/
-
 .hero-banner { display: none; }
 
 .hero {
@@ -528,11 +509,6 @@ body.active { overflow: hidden; }
   background-color: var(--white);
   color: var(--black);
 }
-
-/*-----------------------------------*\
-  #ORDER
-\*-----------------------------------*/
-
 
 .order {
   width: 100%;
@@ -622,11 +598,6 @@ body.active { overflow: hidden; }
 }
 
 
-
-/*-----------------------------------*\
-  #PROMO
-\*-----------------------------------*/
-
 .promo-card {
   position: relative;
   background-color: var(--white);
@@ -681,13 +652,6 @@ body.active { overflow: hidden; }
 }
 
 
-
-
-
-/*-----------------------------------*\
-  #ABOUT
-\*-----------------------------------*/
-
 .about { text-align: center; }
 
 .about-banner {
@@ -738,14 +702,6 @@ body.active { overflow: hidden; }
 }
 
 .about .btn { margin-inline: auto; }
-
-
-
-
-
-/*-----------------------------------*\
-  #FOOD MENU
-\*-----------------------------------*/
 
 .food-menu {
   background-color: var(--isabelline);
@@ -865,14 +821,6 @@ body.active { overflow: hidden; }
 
 .food-menu-card .del { color: var(--gray-x-11-gray); }
 
-
-
-
-
-/*-----------------------------------*\
-  #CTA
-\*-----------------------------------*/
-
 .cta {
   background-repeat: no-repeat;
   background-size: cover;
@@ -918,11 +866,6 @@ body.active { overflow: hidden; }
 
 
 
-
-/*-----------------------------------*\
-  #DELIVERY
-\*-----------------------------------*/
-
 .delivery-content { margin-block-end: 40px; }
 
 .delivery .section-title {
@@ -947,12 +890,6 @@ body.active { overflow: hidden; }
 }
 
 
-
-
-
-/*-----------------------------------*\
-  #TESTIMONIALS
-\*-----------------------------------*/
 
 .testi { text-align: center; }
 
@@ -998,12 +935,6 @@ body.active { overflow: hidden; }
 }
 
 
-
-
-
-/*-----------------------------------*\
-  #BANNER
-\*-----------------------------------*/
 
 .banner { color: var(--white); }
 
@@ -1080,13 +1011,6 @@ body.active { overflow: hidden; }
 
 .banner-card .btn:is(:hover, :focus) { background-color: var(--rich-black-fogra-29); }
 
-/*------------------------------------------------------*/
-
-
-
-/*-----------------------------------*\
-  #BLOG
-\*-----------------------------------*/
 
 .blog { text-align: center; }
 
@@ -1187,10 +1111,6 @@ body.active { overflow: hidden; }
 }
 
 
-
-/*-----------------------------------*\
-  #FOOTER
-\*-----------------------------------*/
 
 .footer { overflow: hidden; }
 
@@ -1322,13 +1242,6 @@ textarea.input-field {
 .copyright-link:is(:hover, :focus) { text-decoration: underline; }
 
 
-
-
-
-/*-----------------------------------*\
-  #BACK TO TOP
-\*-----------------------------------*/
-
 .back-top-btn {
   position: fixed;
   bottom: 10px;
@@ -1354,21 +1267,7 @@ textarea.input-field {
 
 
 
-
-
-/*-----------------------------------*\
-  #MEDIA QUERIES
-\*-----------------------------------*/
-
-/**
- * responsive for larger than 480px screen
- */
-
 @media (min-width: 480px) {
-
-  /**
-   * HEADER
-   */
 
   .header-btn-group .btn {
     display: block;
@@ -1381,15 +1280,9 @@ textarea.input-field {
 
 
 
-/**
- * responsive for larger than 550px screen
- */
-
 @media (min-width: 550px) {
 
-  /**
-   * REUSED STYLE
-   */
+
 
   .container {
     max-width: 550px;
@@ -1401,17 +1294,10 @@ textarea.input-field {
 
 
 
-  /**
-   * HERO
-   */
-
   .hero-title { --fs-1: 4.2rem; }
 
 
 
-  /**
-   * FOOTER
-   */
 
   .footer-top .container { grid-template-columns: 1fr 1fr; }
 
@@ -1420,24 +1306,14 @@ textarea.input-field {
 
 
 
-
-/**
- * responsive for larger than 768px screen
- */
-
 @media (min-width: 768px) {
 
-  /**
-   * REUSED STYLE
-   */
+ 
 
   .container { max-width: 720px; }
 
 
 
-  /**
-   * HERO
-   */
 
   .hero {
     position: relative;
@@ -1480,9 +1356,7 @@ textarea.input-field {
 
 
 
-  /**
-   * ABOUT
-   */
+ 
 
   .about .container {
     display: grid;
@@ -1500,9 +1374,7 @@ textarea.input-field {
 
 
 
-  /**
-   * FOOD MENU
-   */
+ 
 
   .food-menu-list { grid-template-columns: 1fr 1fr; }
 
@@ -1512,9 +1384,6 @@ textarea.input-field {
 
 
 
-  /**
-   * CTA
-   */
 
   .cta .container {
     display: grid;
@@ -1531,9 +1400,6 @@ textarea.input-field {
 
 
 
-  /**
-   * DELIVERY
-   */
 
   .delivery .container {
     display: grid;
@@ -1544,10 +1410,7 @@ textarea.input-field {
 
 
 
-  /**
-   * BANNER
-   */
-
+  
   .banner-list { grid-template-columns: repeat(4, 1fr); }
 
   .banner-lg {
@@ -1563,19 +1426,12 @@ textarea.input-field {
 
 
 
-  /**
-   * BLOG
-   */
-
   .blog-list { grid-template-columns: 1fr 1fr; }
 
   .blog-card { height: 100%; }
 
 
 
-  /**
-   * FOOTER
-   */
 
   .input-wrapper { grid-template-columns: 1fr 1fr; }
 
@@ -1585,73 +1441,18 @@ textarea.input-field {
 
 
 
-/**
- * responsive for larger than 992px screen
- */
 
 @media (min-width: 992px) {
 
-  /**
-   * CUSTOM PROPERTY
-   */
 
   :root {
 
-    /**
-     * spacing
-     */
 
     --section-padding: 120px;
 
   }
 
 
-
-  /**
-   * REUSED STYLE
-   */
-
-  .container { max-width: 960px; }
-
-  .has-scrollbar > li { min-width: calc(33.33% - 6.66px); }
-
-  .h2 { --fs-1: 4.2rem; }
-
-
-
-  /**
-   * HEADER
-   */
-
-  .nav-toggle-btn { display: none; }
-
-  .header .container { gap: 20px; }
-
-  .navbar,
-  .navbar.active {
-    all: unset;
-    margin-inline-start: auto;
-  }
-
-  .navbar-list {
-    margin-block: 0;
-    display: flex;
-    gap: 5px;
-  }
-
-  .nav-item:not(:last-child) { border-block-end: none; }
-
-  .navbar-link {
-    --fs-4: 1.5rem;
-    color: var(--btn-color);
-    letter-spacing: -0.5px;
-  }
-
-
-
-  /**
-   * HERO
-   */
 
   .hero {
     min-height: 660px;
@@ -1679,19 +1480,12 @@ textarea.input-field {
 
 
 
-  /**
-   * FOOD MENU
-   */
 
   .food-menu-list { grid-template-columns: repeat(3, 1fr); }
 
   .food-menu-card { height: 100%; }
 
 
-
-  /**
-   * CTA
-   */
 
   .cta-img { transform: scale(1.4) translate(20px, 40px); }
 
@@ -1701,9 +1495,6 @@ textarea.input-field {
 
 
 
-  /**
-   * BANNER
-   */
 
   .banner-lg .banner-title {
     --fs-1: 3.6rem;
@@ -1715,17 +1506,12 @@ textarea.input-field {
 
 
 
-  /**
-   * TESTIMONIALS
-   */
 
   .testi-list { padding-block-end: 0; }
 
 
 
-  /**
-   * BLOG
-   */
+
 
   .blog-list { grid-template-columns: repeat(3, 1fr); }
 
@@ -1733,19 +1519,13 @@ textarea.input-field {
 
 
 
-  /**
-   * FOOTER
-   */
-
   .footer-top .container { grid-template-columns: 1fr 1fr 1fr 1.6fr; }
 
   .footer-form { margin-block-start: -170px; }
 
 
 
-  /**
-   * BACK TO TOP
-   */
+
 
   .back-top-btn {
     bottom: 20px;
@@ -1756,49 +1536,28 @@ textarea.input-field {
 
 
 
-
-
-/**
- * responsive for larger than 1200px screen
- */
-
 @media (min-width: 1200px) {
 
-  /**
-   * REUSED STYLE
-   */
+ 
 
   .container { max-width: 1200px; }
 
 
 
-  /**
-   * HERO
-   */
-
   .hero { min-height: 770px; }
 
 
 
-  /**
-   * PROMO
-   */
-  
   .promo .promo-item { min-width: calc(25% - 7.5px); }
 
 
 
-  /**
-   * ABOUT
-   */
 
   .about .container { gap: 60px; }
 
 
 
-  /**
-   * CTA
-   */
+
 
   .cta { --section-padding: 60px; }
 
@@ -1806,17 +1565,11 @@ textarea.input-field {
 
 
 
-  /**
-   * BANNER
-   */
 
   .banner-md .banner-item-content { left: 55%; }
 
 
 
-  /**
-   * FOOTER
-   */
 
   .footer-top .container { grid-template-columns: 1.4fr 1fr 1fr 1.6fr; }
 
